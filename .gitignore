@@ -13,4 +13,3 @@ dbt_packages/
 
 # Ignore secrets and compiled files
 .env
-profiles.yml
