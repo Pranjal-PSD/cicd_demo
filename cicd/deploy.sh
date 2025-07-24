@@ -1,11 +1,13 @@
 #!/bin/bash
-set -e  # Exit if any command fails
+set -e  # Stop script on error
 
 echo "Running dbt in DEV environment..."
 
-# Ensure .dbt directory exists
+# Make sure the ~/.dbt directory exists
 mkdir -p ~/.dbt
+
+# Copy your profiles.yml into the expected location
 cp .dbt/profiles.yml ~/.dbt/profiles.yml
 
-# Run dbt
-dbt run --profiles-dir ~/.dbt --target dev
+# Now run dbt using the default path
+dbt run --target dev
