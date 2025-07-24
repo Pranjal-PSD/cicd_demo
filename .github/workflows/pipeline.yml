@@ -1,0 +1,30 @@
+name: dbt Deploy to Dev
+
+on:
+  push:
+    branches:
+      - dev  # Only runs when you push to the 'dev' branch
+
+jobs:
+  dbt-deploy-dev:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+
+    - name: Install dbt
+      run: |
+        pip install dbt-core dbt-snowflake
+
+    - name: Run dbt deploy script
+      env:
+        DBT_PROFILES_DIR: ./.dbt
+        SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
+      run: |
+        bash cicd/deploy.sh
