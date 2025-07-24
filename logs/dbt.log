@@ -1,0 +1,498 @@
+[0m22:54:35.623626 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000227C2448C80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000227C2741EB0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000227C27436B0>]}
+
+
+============================== 22:54:35.632463 | 5629e332-7d70-4971-ae93-3937f4eec1cf ==============================
+[0m22:54:35.632463 [info ] [MainThread]: Running with dbt=1.10.5
+[0m22:54:35.632463 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\lenovo\\.dbt', 'log_path': 'C:\\Users\\lenovo\\cicd_demo\\logs', 'debug': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'target_path': 'None', 'invocation_command': 'dbt debug', 'send_anonymous_usage_stats': 'True'}
+[0m22:54:35.673840 [info ] [MainThread]: dbt version: 1.10.5
+[0m22:54:35.673840 [info ] [MainThread]: python version: 3.12.6
+[0m22:54:35.675098 [info ] [MainThread]: python path: C:\Users\lenovo\AppData\Local\Programs\Python\Python312\python.exe
+[0m22:54:35.675098 [info ] [MainThread]: os info: Windows-11-10.0.26100-SP0
+[0m22:54:36.328536 [info ] [MainThread]: Using profiles dir at C:\Users\lenovo\.dbt
+[0m22:54:36.329505 [info ] [MainThread]: Using profiles.yml file at C:\Users\lenovo\.dbt\profiles.yml
+[0m22:54:36.330648 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\lenovo\cicd_demo\dbt_project.yml
+[0m22:54:36.332032 [info ] [MainThread]: adapter type: snowflake
+[0m22:54:36.332914 [info ] [MainThread]: adapter version: 1.10.0
+[0m22:54:36.492514 [info ] [MainThread]: Configuration:
+[0m22:54:36.493512 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m22:54:36.494898 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m22:54:36.494898 [info ] [MainThread]: Required dependencies:
+[0m22:54:36.495898 [debug] [MainThread]: Executing "git --help"
+[0m22:54:36.576266 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m22:54:36.577272 [debug] [MainThread]: STDERR: "b''"
+[0m22:54:36.578272 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m22:54:36.578272 [info ] [MainThread]: Connection:
+[0m22:54:36.579276 [info ] [MainThread]:   account: TEWNAEX-QQ42202
+[0m22:54:36.580410 [info ] [MainThread]:   user: PRANJALDBT
+[0m22:54:36.580410 [info ] [MainThread]:   database: PRANJAL
+[0m22:54:36.581409 [info ] [MainThread]:   warehouse: COMPUTE_WH
+[0m22:54:36.582424 [info ] [MainThread]:   role: ACCOUNTADMIN
+[0m22:54:36.582424 [info ] [MainThread]:   schema: PUBLIC
+[0m22:54:36.582424 [info ] [MainThread]:   authenticator: None
+[0m22:54:36.583912 [info ] [MainThread]:   oauth_client_id: None
+[0m22:54:36.585075 [info ] [MainThread]:   query_tag: None
+[0m22:54:36.585075 [info ] [MainThread]:   client_session_keep_alive: False
+[0m22:54:36.586558 [info ] [MainThread]:   host: None
+[0m22:54:36.586558 [info ] [MainThread]:   port: None
+[0m22:54:36.587559 [info ] [MainThread]:   proxy_host: None
+[0m22:54:36.588557 [info ] [MainThread]:   proxy_port: None
+[0m22:54:36.588557 [info ] [MainThread]:   protocol: None
+[0m22:54:36.589584 [info ] [MainThread]:   connect_retries: 1
+[0m22:54:36.590586 [info ] [MainThread]:   connect_timeout: None
+[0m22:54:36.591585 [info ] [MainThread]:   retry_on_database_errors: False
+[0m22:54:36.591585 [info ] [MainThread]:   retry_all: False
+[0m22:54:36.592964 [info ] [MainThread]:   insecure_mode: False
+[0m22:54:36.593962 [info ] [MainThread]:   reuse_connections: True
+[0m22:54:36.593962 [info ] [MainThread]:   s3_stage_vpce_dns_name: None
+[0m22:54:36.595425 [info ] [MainThread]: Registered adapter: snowflake=1.10.0
+[0m22:54:37.252508 [debug] [MainThread]: Acquiring new snowflake connection 'debug'
+[0m22:54:40.180799 [debug] [MainThread]: Using snowflake connection "debug"
+[0m22:54:40.181801 [debug] [MainThread]: On debug: select 1 as id
+[0m22:54:40.181801 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m22:54:41.748361 [debug] [MainThread]: SQL status: SUCCESS 1 in 1.565 seconds
+[0m22:54:41.750350 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m22:54:41.751350 [info ] [MainThread]: [32mAll checks passed![0m
+[0m22:54:41.752575 [debug] [MainThread]: Command `dbt debug` succeeded at 22:54:41.752575 after 6.40 seconds
+[0m22:54:41.753562 [debug] [MainThread]: Connection 'debug' was left open.
+[0m22:54:41.753562 [debug] [MainThread]: On debug: Close
+[0m22:54:41.951382 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000227C2002840>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000227C27011F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000227C53ED670>]}
+[0m22:54:41.952400 [debug] [MainThread]: Flushing usage events
+[0m22:54:44.142846 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m22:55:20.771847 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AF40A82AB0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AF40A81CA0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AF40A81D60>]}
+
+
+============================== 22:55:20.777881 | 65d1d883-a65c-465a-aa1d-135e82cfd5f3 ==============================
+[0m22:55:20.777881 [info ] [MainThread]: Running with dbt=1.10.5
+[0m22:55:20.779088 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'fail_fast': 'False', 'log_path': 'C:\\Users\\lenovo\\cicd_demo\\logs', 'debug': 'False', 'profiles_dir': 'C:\\Users\\lenovo\\.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'static_parser': 'True', 'log_format': 'default', 'invocation_command': 'dbt run', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m22:55:21.618024 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '65d1d883-a65c-465a-aa1d-135e82cfd5f3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AF43291D00>]}
+[0m22:55:21.704650 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '65d1d883-a65c-465a-aa1d-135e82cfd5f3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AF42F89D30>]}
+[0m22:55:21.706212 [info ] [MainThread]: Registered adapter: snowflake=1.10.0
+[0m22:55:22.233790 [debug] [MainThread]: checksum: fa4c2685620973c5adba0a491aa9c06e8cf48c9113a5280b45b6efa706ae8f4b, vars: {}, profile: , target: , version: 1.10.5
+[0m22:55:22.235783 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m22:55:22.236780 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '65d1d883-a65c-465a-aa1d-135e82cfd5f3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AF42605A30>]}
+[0m22:55:25.454956 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.cicd_demo.example
+[0m22:55:25.468777 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '65d1d883-a65c-465a-aa1d-135e82cfd5f3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AF3E9D8D70>]}
+[0m22:55:25.593211 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\lenovo\cicd_demo\target\manifest.json
+[0m22:55:25.634575 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\lenovo\cicd_demo\target\semantic_manifest.json
+[0m22:55:25.678318 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '65d1d883-a65c-465a-aa1d-135e82cfd5f3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AF439B7650>]}
+[0m22:55:25.679321 [info ] [MainThread]: Found 2 models, 2 data tests, 1 source, 477 macros
+[0m22:55:25.680318 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '65d1d883-a65c-465a-aa1d-135e82cfd5f3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AF439C5280>]}
+[0m22:55:25.682633 [info ] [MainThread]: 
+[0m22:55:25.683632 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m22:55:25.684633 [info ] [MainThread]: 
+[0m22:55:25.684633 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m22:55:25.694664 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_PRANJAL'
+[0m22:55:25.818940 [debug] [ThreadPool]: Using snowflake connection "list_PRANJAL"
+[0m22:55:25.818940 [debug] [ThreadPool]: On list_PRANJAL: show terse schemas in database PRANJAL
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.10.5", "profile_name": "cicd_demo", "target_name": "dev", "connection_name": "list_PRANJAL"} */
+[0m22:55:25.824692 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:55:27.892086 [debug] [ThreadPool]: SQL status: SUCCESS 4 in 2.068 seconds
+[0m22:55:27.897094 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_PRANJAL_PUBLIC'
+[0m22:55:27.914609 [debug] [ThreadPool]: Using snowflake connection "list_PRANJAL_PUBLIC"
+[0m22:55:27.914609 [debug] [ThreadPool]: On list_PRANJAL_PUBLIC: show objects in PRANJAL.PUBLIC
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.10.5", "profile_name": "cicd_demo", "target_name": "dev", "connection_name": "list_PRANJAL_PUBLIC"} */;
+[0m22:55:27.914609 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:55:28.487474 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 0.572 seconds
+[0m22:55:28.493474 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '65d1d883-a65c-465a-aa1d-135e82cfd5f3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AF432B4A70>]}
+[0m22:55:28.522497 [debug] [Thread-1 (]: Began running node model.cicd_demo.stage_sales_data
+[0m22:55:28.523906 [info ] [Thread-1 (]: 1 of 2 START sql view model PUBLIC.stage_sales_data ............................ [RUN]
+[0m22:55:28.524928 [debug] [Thread-1 (]: Acquiring new snowflake connection 'model.cicd_demo.stage_sales_data'
+[0m22:55:28.526019 [debug] [Thread-1 (]: Began compiling node model.cicd_demo.stage_sales_data
+[0m22:55:28.538040 [debug] [Thread-1 (]: Writing injected SQL for node "model.cicd_demo.stage_sales_data"
+[0m22:55:28.542039 [debug] [Thread-1 (]: Began executing node model.cicd_demo.stage_sales_data
+[0m22:55:28.739973 [debug] [Thread-1 (]: Writing runtime sql for node "model.cicd_demo.stage_sales_data"
+[0m22:55:28.758995 [debug] [Thread-1 (]: Using snowflake connection "model.cicd_demo.stage_sales_data"
+[0m22:55:28.758995 [debug] [Thread-1 (]: On model.cicd_demo.stage_sales_data: create or replace   view PRANJAL.PUBLIC.stage_sales_data
+  
+  
+  
+  
+  as (
+    -- models/staging/stage_sales_data.sql
+
+with source as (
+    select * from PRANJAL.PUBLIC.sales_data
+)
+
+select
+    id,
+    customer_id,
+    amount,
+    cast(sale_date as date) as sale_date
+from source
+  )
+/* {"app": "dbt", "dbt_version": "1.10.5", "profile_name": "cicd_demo", "target_name": "dev", "node_id": "model.cicd_demo.stage_sales_data"} */;
+[0m22:55:28.759997 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m22:55:29.679318 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.920 seconds
+[0m22:55:29.711479 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '65d1d883-a65c-465a-aa1d-135e82cfd5f3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AF403C8230>]}
+[0m22:55:29.711479 [info ] [Thread-1 (]: 1 of 2 OK created sql view model PUBLIC.stage_sales_data ....................... [[32mSUCCESS 1[0m in 1.18s]
+[0m22:55:29.712739 [debug] [Thread-1 (]: Finished running node model.cicd_demo.stage_sales_data
+[0m22:55:29.713922 [debug] [Thread-1 (]: Began running node model.cicd_demo.transform_sales_data
+[0m22:55:29.714965 [info ] [Thread-1 (]: 2 of 2 START sql view model PUBLIC.transform_sales_data ........................ [RUN]
+[0m22:55:29.715946 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.cicd_demo.stage_sales_data, now model.cicd_demo.transform_sales_data)
+[0m22:55:29.715946 [debug] [Thread-1 (]: Began compiling node model.cicd_demo.transform_sales_data
+[0m22:55:29.720375 [debug] [Thread-1 (]: Writing injected SQL for node "model.cicd_demo.transform_sales_data"
+[0m22:55:29.722798 [debug] [Thread-1 (]: Began executing node model.cicd_demo.transform_sales_data
+[0m22:55:29.728044 [debug] [Thread-1 (]: Writing runtime sql for node "model.cicd_demo.transform_sales_data"
+[0m22:55:29.731062 [debug] [Thread-1 (]: Using snowflake connection "model.cicd_demo.transform_sales_data"
+[0m22:55:29.732060 [debug] [Thread-1 (]: On model.cicd_demo.transform_sales_data: create or replace   view PRANJAL.PUBLIC.transform_sales_data
+  
+  
+  
+  
+  as (
+    -- models/marts/transform_sales_data.sql
+
+select
+    customer_id,
+    count(*) as order_count,
+    sum(amount) as total_amount
+from PRANJAL.PUBLIC.stage_sales_data
+group by customer_id
+  )
+/* {"app": "dbt", "dbt_version": "1.10.5", "profile_name": "cicd_demo", "target_name": "dev", "node_id": "model.cicd_demo.transform_sales_data"} */;
+[0m22:55:30.132591 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.399 seconds
+[0m22:55:30.135590 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '65d1d883-a65c-465a-aa1d-135e82cfd5f3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AF43725970>]}
+[0m22:55:30.136591 [info ] [Thread-1 (]: 2 of 2 OK created sql view model PUBLIC.transform_sales_data ................... [[32mSUCCESS 1[0m in 0.42s]
+[0m22:55:30.137592 [debug] [Thread-1 (]: Finished running node model.cicd_demo.transform_sales_data
+[0m22:55:30.139704 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m22:55:30.140228 [debug] [MainThread]: Connection 'list_PRANJAL' was left open.
+[0m22:55:30.140228 [debug] [MainThread]: On list_PRANJAL: Close
+[0m22:55:30.328745 [debug] [MainThread]: Connection 'list_PRANJAL_PUBLIC' was left open.
+[0m22:55:30.328745 [debug] [MainThread]: On list_PRANJAL_PUBLIC: Close
+[0m22:55:30.540318 [debug] [MainThread]: Connection 'model.cicd_demo.transform_sales_data' was left open.
+[0m22:55:30.541318 [debug] [MainThread]: On model.cicd_demo.transform_sales_data: Close
+[0m22:55:30.724068 [info ] [MainThread]: 
+[0m22:55:30.725603 [info ] [MainThread]: Finished running 2 view models in 0 hours 0 minutes and 5.04 seconds (5.04s).
+[0m22:55:30.726773 [debug] [MainThread]: Command end result
+[0m22:55:30.759610 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\lenovo\cicd_demo\target\manifest.json
+[0m22:55:30.764281 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\lenovo\cicd_demo\target\semantic_manifest.json
+[0m22:55:30.775966 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\lenovo\cicd_demo\target\run_results.json
+[0m22:55:30.775966 [info ] [MainThread]: 
+[0m22:55:30.776978 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m22:55:30.777978 [info ] [MainThread]: 
+[0m22:55:30.779232 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=2
+[0m22:55:30.780926 [debug] [MainThread]: Command `dbt run` succeeded at 22:55:30.779749 after 10.19 seconds
+[0m22:55:30.780926 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AF40ECF230>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AF3FE23110>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AF3D5AB2C0>]}
+[0m22:55:30.780926 [debug] [MainThread]: Flushing usage events
+[0m22:55:32.181227 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m22:55:44.024012 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002C10238C950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002C1036E04A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002C10535B1A0>]}
+
+
+============================== 22:55:44.029996 | 1f3d512a-6591-4b76-b387-5fdb73b46b41 ==============================
+[0m22:55:44.029996 [info ] [MainThread]: Running with dbt=1.10.5
+[0m22:55:44.029996 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'C:\\Users\\lenovo\\cicd_demo\\logs', 'profiles_dir': 'C:\\Users\\lenovo\\.dbt', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt test', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m22:55:44.889596 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '1f3d512a-6591-4b76-b387-5fdb73b46b41', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002C1081374A0>]}
+[0m22:55:44.992400 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '1f3d512a-6591-4b76-b387-5fdb73b46b41', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002C107E09820>]}
+[0m22:55:44.995395 [info ] [MainThread]: Registered adapter: snowflake=1.10.0
+[0m22:55:45.559630 [debug] [MainThread]: checksum: fa4c2685620973c5adba0a491aa9c06e8cf48c9113a5280b45b6efa706ae8f4b, vars: {}, profile: , target: , version: 1.10.5
+[0m22:55:45.857979 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m22:55:45.858980 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m22:55:45.870998 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.cicd_demo.example
+[0m22:55:46.018682 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '1f3d512a-6591-4b76-b387-5fdb73b46b41', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002C10830D5E0>]}
+[0m22:55:46.142049 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\lenovo\cicd_demo\target\manifest.json
+[0m22:55:46.146575 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\lenovo\cicd_demo\target\semantic_manifest.json
+[0m22:55:46.218973 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '1f3d512a-6591-4b76-b387-5fdb73b46b41', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002C1086DDD90>]}
+[0m22:55:46.219974 [info ] [MainThread]: Found 2 models, 2 data tests, 1 source, 477 macros
+[0m22:55:46.220972 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '1f3d512a-6591-4b76-b387-5fdb73b46b41', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002C1086B22D0>]}
+[0m22:55:46.223604 [info ] [MainThread]: 
+[0m22:55:46.224643 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m22:55:46.225625 [info ] [MainThread]: 
+[0m22:55:46.225625 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m22:55:46.236231 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_PRANJAL_PUBLIC'
+[0m22:55:46.393586 [debug] [ThreadPool]: Using snowflake connection "list_PRANJAL_PUBLIC"
+[0m22:55:46.394939 [debug] [ThreadPool]: On list_PRANJAL_PUBLIC: show objects in PRANJAL.PUBLIC
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.10.5", "profile_name": "cicd_demo", "target_name": "dev", "connection_name": "list_PRANJAL_PUBLIC"} */;
+[0m22:55:46.394939 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:55:47.235038 [debug] [ThreadPool]: SQL status: SUCCESS 7 in 0.840 seconds
+[0m22:55:47.241534 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '1f3d512a-6591-4b76-b387-5fdb73b46b41', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002C108107C50>]}
+[0m22:55:47.248441 [debug] [Thread-1 (]: Began running node test.cicd_demo.not_null_stage_sales_data_id.28230f7ecb
+[0m22:55:47.249445 [info ] [Thread-1 (]: 1 of 2 START test not_null_stage_sales_data_id ................................. [RUN]
+[0m22:55:47.249445 [debug] [Thread-1 (]: Acquiring new snowflake connection 'test.cicd_demo.not_null_stage_sales_data_id.28230f7ecb'
+[0m22:55:47.251903 [debug] [Thread-1 (]: Began compiling node test.cicd_demo.not_null_stage_sales_data_id.28230f7ecb
+[0m22:55:47.276445 [debug] [Thread-1 (]: Writing injected SQL for node "test.cicd_demo.not_null_stage_sales_data_id.28230f7ecb"
+[0m22:55:47.280735 [debug] [Thread-1 (]: Began executing node test.cicd_demo.not_null_stage_sales_data_id.28230f7ecb
+[0m22:55:47.318887 [debug] [Thread-1 (]: Writing runtime sql for node "test.cicd_demo.not_null_stage_sales_data_id.28230f7ecb"
+[0m22:55:47.336835 [debug] [Thread-1 (]: Using snowflake connection "test.cicd_demo.not_null_stage_sales_data_id.28230f7ecb"
+[0m22:55:47.337851 [debug] [Thread-1 (]: On test.cicd_demo.not_null_stage_sales_data_id.28230f7ecb: select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select id
+from PRANJAL.PUBLIC.stage_sales_data
+where id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+/* {"app": "dbt", "dbt_version": "1.10.5", "profile_name": "cicd_demo", "target_name": "dev", "node_id": "test.cicd_demo.not_null_stage_sales_data_id.28230f7ecb"} */
+[0m22:55:47.337851 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m22:55:48.684828 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 1.347 seconds
+[0m22:55:48.697828 [info ] [Thread-1 (]: 1 of 2 PASS not_null_stage_sales_data_id ....................................... [[32mPASS[0m in 1.45s]
+[0m22:55:48.699927 [debug] [Thread-1 (]: Finished running node test.cicd_demo.not_null_stage_sales_data_id.28230f7ecb
+[0m22:55:48.700909 [debug] [Thread-1 (]: Began running node test.cicd_demo.not_null_stage_sales_data_sale_date.29e899eeb5
+[0m22:55:48.700909 [info ] [Thread-1 (]: 2 of 2 START test not_null_stage_sales_data_sale_date .......................... [RUN]
+[0m22:55:48.702106 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.cicd_demo.not_null_stage_sales_data_id.28230f7ecb, now test.cicd_demo.not_null_stage_sales_data_sale_date.29e899eeb5)
+[0m22:55:48.703244 [debug] [Thread-1 (]: Began compiling node test.cicd_demo.not_null_stage_sales_data_sale_date.29e899eeb5
+[0m22:55:48.708232 [debug] [Thread-1 (]: Writing injected SQL for node "test.cicd_demo.not_null_stage_sales_data_sale_date.29e899eeb5"
+[0m22:55:48.711228 [debug] [Thread-1 (]: Began executing node test.cicd_demo.not_null_stage_sales_data_sale_date.29e899eeb5
+[0m22:55:48.716226 [debug] [Thread-1 (]: Writing runtime sql for node "test.cicd_demo.not_null_stage_sales_data_sale_date.29e899eeb5"
+[0m22:55:48.718227 [debug] [Thread-1 (]: Using snowflake connection "test.cicd_demo.not_null_stage_sales_data_sale_date.29e899eeb5"
+[0m22:55:48.719231 [debug] [Thread-1 (]: On test.cicd_demo.not_null_stage_sales_data_sale_date.29e899eeb5: select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select sale_date
+from PRANJAL.PUBLIC.stage_sales_data
+where sale_date is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+/* {"app": "dbt", "dbt_version": "1.10.5", "profile_name": "cicd_demo", "target_name": "dev", "node_id": "test.cicd_demo.not_null_stage_sales_data_sale_date.29e899eeb5"} */
+[0m22:55:49.078681 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.359 seconds
+[0m22:55:49.082690 [info ] [Thread-1 (]: 2 of 2 PASS not_null_stage_sales_data_sale_date ................................ [[32mPASS[0m in 0.38s]
+[0m22:55:49.084710 [debug] [Thread-1 (]: Finished running node test.cicd_demo.not_null_stage_sales_data_sale_date.29e899eeb5
+[0m22:55:49.086928 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m22:55:49.087436 [debug] [MainThread]: Connection 'list_PRANJAL_PUBLIC' was left open.
+[0m22:55:49.087436 [debug] [MainThread]: On list_PRANJAL_PUBLIC: Close
+[0m22:55:49.270032 [debug] [MainThread]: Connection 'test.cicd_demo.not_null_stage_sales_data_sale_date.29e899eeb5' was left open.
+[0m22:55:49.271038 [debug] [MainThread]: On test.cicd_demo.not_null_stage_sales_data_sale_date.29e899eeb5: Close
+[0m22:55:49.480389 [info ] [MainThread]: 
+[0m22:55:49.481395 [info ] [MainThread]: Finished running 2 data tests in 0 hours 0 minutes and 3.25 seconds (3.25s).
+[0m22:55:49.483452 [debug] [MainThread]: Command end result
+[0m22:55:49.517435 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\lenovo\cicd_demo\target\manifest.json
+[0m22:55:49.524441 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\lenovo\cicd_demo\target\semantic_manifest.json
+[0m22:55:49.539282 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\lenovo\cicd_demo\target\run_results.json
+[0m22:55:49.540281 [info ] [MainThread]: 
+[0m22:55:49.541282 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m22:55:49.542282 [info ] [MainThread]: 
+[0m22:55:49.543281 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=2
+[0m22:55:49.545297 [debug] [MainThread]: Command `dbt test` succeeded at 22:55:49.545297 after 5.71 seconds
+[0m22:55:49.546300 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002C105624BF0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002C1052F9CA0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002C1052F8DD0>]}
+[0m22:55:49.546300 [debug] [MainThread]: Flushing usage events
+[0m22:55:50.671784 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m23:01:48.847824 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002892EE8C950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028931D9CE00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000289317EED50>]}
+
+
+============================== 23:01:48.853892 | 2153ffed-c0e9-47b3-bf67-8954a1b1414f ==============================
+[0m23:01:48.853892 [info ] [MainThread]: Running with dbt=1.10.5
+[0m23:01:48.853892 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'profiles_dir': 'C:\\Users\\lenovo\\.dbt', 'log_path': 'C:\\Users\\lenovo\\cicd_demo\\logs', 'fail_fast': 'False', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'target_path': 'None', 'invocation_command': 'dbt debug', 'send_anonymous_usage_stats': 'True'}
+[0m23:01:48.894627 [info ] [MainThread]: dbt version: 1.10.5
+[0m23:01:48.894627 [info ] [MainThread]: python version: 3.12.6
+[0m23:01:48.896797 [info ] [MainThread]: python path: C:\Users\lenovo\AppData\Local\Programs\Python\Python312\python.exe
+[0m23:01:48.896797 [info ] [MainThread]: os info: Windows-11-10.0.26100-SP0
+[0m23:01:49.541557 [info ] [MainThread]: Using profiles dir at C:\Users\lenovo\.dbt
+[0m23:01:49.541557 [info ] [MainThread]: Using profiles.yml file at C:\Users\lenovo\.dbt\profiles.yml
+[0m23:01:49.541557 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\lenovo\cicd_demo\dbt_project.yml
+[0m23:01:49.550056 [info ] [MainThread]: adapter type: snowflake
+[0m23:01:49.550056 [info ] [MainThread]: adapter version: 1.10.0
+[0m23:01:49.688064 [info ] [MainThread]: Configuration:
+[0m23:01:49.688064 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m23:01:49.702081 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m23:01:49.702593 [info ] [MainThread]: Required dependencies:
+[0m23:01:49.702593 [debug] [MainThread]: Executing "git --help"
+[0m23:01:49.762094 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m23:01:49.764101 [debug] [MainThread]: STDERR: "b''"
+[0m23:01:49.764101 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m23:01:49.764101 [info ] [MainThread]: Connection:
+[0m23:01:49.765849 [info ] [MainThread]:   account: TEWNAEX-QQ42202
+[0m23:01:49.767107 [info ] [MainThread]:   user: PRANJALDBT
+[0m23:01:49.767107 [info ] [MainThread]:   database: PRANJAL
+[0m23:01:49.768235 [info ] [MainThread]:   warehouse: COMPUTE_WH
+[0m23:01:49.768235 [info ] [MainThread]:   role: ACCOUNTADMIN
+[0m23:01:49.768235 [info ] [MainThread]:   schema: PUBLIC
+[0m23:01:49.768235 [info ] [MainThread]:   authenticator: None
+[0m23:01:49.770806 [info ] [MainThread]:   oauth_client_id: None
+[0m23:01:49.770806 [info ] [MainThread]:   query_tag: None
+[0m23:01:49.770806 [info ] [MainThread]:   client_session_keep_alive: False
+[0m23:01:49.770806 [info ] [MainThread]:   host: None
+[0m23:01:49.773762 [info ] [MainThread]:   port: None
+[0m23:01:49.773762 [info ] [MainThread]:   proxy_host: None
+[0m23:01:49.773762 [info ] [MainThread]:   proxy_port: None
+[0m23:01:49.775860 [info ] [MainThread]:   protocol: None
+[0m23:01:49.775860 [info ] [MainThread]:   connect_retries: 1
+[0m23:01:49.775860 [info ] [MainThread]:   connect_timeout: None
+[0m23:01:49.775860 [info ] [MainThread]:   retry_on_database_errors: False
+[0m23:01:49.775860 [info ] [MainThread]:   retry_all: False
+[0m23:01:49.775860 [info ] [MainThread]:   insecure_mode: False
+[0m23:01:49.775860 [info ] [MainThread]:   reuse_connections: True
+[0m23:01:49.775860 [info ] [MainThread]:   s3_stage_vpce_dns_name: None
+[0m23:01:49.781523 [info ] [MainThread]: Registered adapter: snowflake=1.10.0
+[0m23:01:50.263292 [debug] [MainThread]: Acquiring new snowflake connection 'debug'
+[0m23:01:50.363748 [debug] [MainThread]: Using snowflake connection "debug"
+[0m23:01:50.364788 [debug] [MainThread]: On debug: select 1 as id
+[0m23:01:50.364788 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m23:01:52.215398 [debug] [MainThread]: SQL status: SUCCESS 1 in 1.852 seconds
+[0m23:01:52.218068 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m23:01:52.218068 [info ] [MainThread]: [32mAll checks passed![0m
+[0m23:01:52.221736 [debug] [MainThread]: Command `dbt debug` succeeded at 23:01:52.221736 after 3.63 seconds
+[0m23:01:52.221736 [debug] [MainThread]: Connection 'debug' was left open.
+[0m23:01:52.221736 [debug] [MainThread]: On debug: Close
+[0m23:01:52.403286 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028934C4A150>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028934BB3C20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028934BB38C0>]}
+[0m23:01:52.403286 [debug] [MainThread]: Flushing usage events
+[0m23:01:56.926604 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m23:02:08.272460 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DAA2912990>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DA9F437770>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DAA2912CC0>]}
+
+
+============================== 23:02:08.278738 | ba4b8d86-353b-4b75-bb37-2581195bf31e ==============================
+[0m23:02:08.278738 [info ] [MainThread]: Running with dbt=1.10.5
+[0m23:02:08.279758 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'log_path': 'C:\\Users\\lenovo\\cicd_demo\\logs', 'version_check': 'True', 'profiles_dir': 'C:\\Users\\lenovo\\.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt test', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m23:02:09.051296 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'ba4b8d86-353b-4b75-bb37-2581195bf31e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DAA4E13290>]}
+[0m23:02:09.138168 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'ba4b8d86-353b-4b75-bb37-2581195bf31e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DAA4FB3890>]}
+[0m23:02:09.140346 [info ] [MainThread]: Registered adapter: snowflake=1.10.0
+[0m23:02:09.625939 [debug] [MainThread]: checksum: fa4c2685620973c5adba0a491aa9c06e8cf48c9113a5280b45b6efa706ae8f4b, vars: {}, profile: , target: , version: 1.10.5
+[0m23:02:09.857202 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m23:02:09.858219 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m23:02:09.866219 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.cicd_demo.example
+[0m23:02:10.008996 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'ba4b8d86-353b-4b75-bb37-2581195bf31e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DAA5314C80>]}
+[0m23:02:10.112496 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\lenovo\cicd_demo\target\manifest.json
+[0m23:02:10.116508 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\lenovo\cicd_demo\target\semantic_manifest.json
+[0m23:02:10.163777 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'ba4b8d86-353b-4b75-bb37-2581195bf31e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DAA558E270>]}
+[0m23:02:10.169811 [info ] [MainThread]: Found 2 models, 2 data tests, 1 source, 477 macros
+[0m23:02:10.169811 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'ba4b8d86-353b-4b75-bb37-2581195bf31e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DAA5562540>]}
+[0m23:02:10.172322 [info ] [MainThread]: 
+[0m23:02:10.172322 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m23:02:10.172322 [info ] [MainThread]: 
+[0m23:02:10.172322 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m23:02:10.181804 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_PRANJAL_PUBLIC'
+[0m23:02:10.317635 [debug] [ThreadPool]: Using snowflake connection "list_PRANJAL_PUBLIC"
+[0m23:02:10.319644 [debug] [ThreadPool]: On list_PRANJAL_PUBLIC: show objects in PRANJAL.PUBLIC
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.10.5", "profile_name": "cicd_demo", "target_name": "dev", "connection_name": "list_PRANJAL_PUBLIC"} */;
+[0m23:02:10.319644 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m23:02:11.243806 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 0.924 seconds
+[0m23:02:11.247824 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'ba4b8d86-353b-4b75-bb37-2581195bf31e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DAA3F50B30>]}
+[0m23:02:11.251212 [debug] [Thread-1 (]: Began running node test.cicd_demo.not_null_stage_sales_data_id.28230f7ecb
+[0m23:02:11.251212 [info ] [Thread-1 (]: 1 of 2 START test not_null_stage_sales_data_id ................................. [RUN]
+[0m23:02:11.251212 [debug] [Thread-1 (]: Acquiring new snowflake connection 'test.cicd_demo.not_null_stage_sales_data_id.28230f7ecb'
+[0m23:02:11.257911 [debug] [Thread-1 (]: Began compiling node test.cicd_demo.not_null_stage_sales_data_id.28230f7ecb
+[0m23:02:11.281935 [debug] [Thread-1 (]: Writing injected SQL for node "test.cicd_demo.not_null_stage_sales_data_id.28230f7ecb"
+[0m23:02:11.281935 [debug] [Thread-1 (]: Began executing node test.cicd_demo.not_null_stage_sales_data_id.28230f7ecb
+[0m23:02:11.318536 [debug] [Thread-1 (]: Writing runtime sql for node "test.cicd_demo.not_null_stage_sales_data_id.28230f7ecb"
+[0m23:02:11.320541 [debug] [Thread-1 (]: Using snowflake connection "test.cicd_demo.not_null_stage_sales_data_id.28230f7ecb"
+[0m23:02:11.320541 [debug] [Thread-1 (]: On test.cicd_demo.not_null_stage_sales_data_id.28230f7ecb: select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select id
+from PRANJAL.PUBLIC.stage_sales_data
+where id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+/* {"app": "dbt", "dbt_version": "1.10.5", "profile_name": "cicd_demo", "target_name": "dev", "node_id": "test.cicd_demo.not_null_stage_sales_data_id.28230f7ecb"} */
+[0m23:02:11.322546 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m23:02:11.956426 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.634 seconds
+[0m23:02:11.968480 [info ] [Thread-1 (]: 1 of 2 PASS not_null_stage_sales_data_id ....................................... [[32mPASS[0m in 0.72s]
+[0m23:02:11.970234 [debug] [Thread-1 (]: Finished running node test.cicd_demo.not_null_stage_sales_data_id.28230f7ecb
+[0m23:02:11.970234 [debug] [Thread-1 (]: Began running node test.cicd_demo.not_null_stage_sales_data_sale_date.29e899eeb5
+[0m23:02:11.972061 [info ] [Thread-1 (]: 2 of 2 START test not_null_stage_sales_data_sale_date .......................... [RUN]
+[0m23:02:11.972061 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.cicd_demo.not_null_stage_sales_data_id.28230f7ecb, now test.cicd_demo.not_null_stage_sales_data_sale_date.29e899eeb5)
+[0m23:02:11.972061 [debug] [Thread-1 (]: Began compiling node test.cicd_demo.not_null_stage_sales_data_sale_date.29e899eeb5
+[0m23:02:11.973629 [debug] [Thread-1 (]: Writing injected SQL for node "test.cicd_demo.not_null_stage_sales_data_sale_date.29e899eeb5"
+[0m23:02:11.973629 [debug] [Thread-1 (]: Began executing node test.cicd_demo.not_null_stage_sales_data_sale_date.29e899eeb5
+[0m23:02:11.982719 [debug] [Thread-1 (]: Writing runtime sql for node "test.cicd_demo.not_null_stage_sales_data_sale_date.29e899eeb5"
+[0m23:02:11.982719 [debug] [Thread-1 (]: Using snowflake connection "test.cicd_demo.not_null_stage_sales_data_sale_date.29e899eeb5"
+[0m23:02:11.986286 [debug] [Thread-1 (]: On test.cicd_demo.not_null_stage_sales_data_sale_date.29e899eeb5: select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select sale_date
+from PRANJAL.PUBLIC.stage_sales_data
+where sale_date is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+/* {"app": "dbt", "dbt_version": "1.10.5", "profile_name": "cicd_demo", "target_name": "dev", "node_id": "test.cicd_demo.not_null_stage_sales_data_sale_date.29e899eeb5"} */
+[0m23:02:12.194875 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 0.208 seconds
+[0m23:02:12.197872 [info ] [Thread-1 (]: 2 of 2 PASS not_null_stage_sales_data_sale_date ................................ [[32mPASS[0m in 0.23s]
+[0m23:02:12.199874 [debug] [Thread-1 (]: Finished running node test.cicd_demo.not_null_stage_sales_data_sale_date.29e899eeb5
+[0m23:02:12.201870 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m23:02:12.201870 [debug] [MainThread]: Connection 'list_PRANJAL_PUBLIC' was left open.
+[0m23:02:12.202891 [debug] [MainThread]: On list_PRANJAL_PUBLIC: Close
+[0m23:02:12.394881 [debug] [MainThread]: Connection 'test.cicd_demo.not_null_stage_sales_data_sale_date.29e899eeb5' was left open.
+[0m23:02:12.395884 [debug] [MainThread]: On test.cicd_demo.not_null_stage_sales_data_sale_date.29e899eeb5: Close
+[0m23:02:12.600430 [info ] [MainThread]: 
+[0m23:02:12.601431 [info ] [MainThread]: Finished running 2 data tests in 0 hours 0 minutes and 2.43 seconds (2.43s).
+[0m23:02:12.602348 [debug] [MainThread]: Command end result
+[0m23:02:12.638181 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\lenovo\cicd_demo\target\manifest.json
+[0m23:02:12.643489 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\lenovo\cicd_demo\target\semantic_manifest.json
+[0m23:02:12.652488 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\lenovo\cicd_demo\target\run_results.json
+[0m23:02:12.653492 [info ] [MainThread]: 
+[0m23:02:12.653492 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m23:02:12.654502 [info ] [MainThread]: 
+[0m23:02:12.655665 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=2
+[0m23:02:12.656664 [debug] [MainThread]: Command `dbt test` succeeded at 23:02:12.656664 after 4.57 seconds
+[0m23:02:12.657667 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DAA282F230>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DAA57C07A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DAA50ADE20>]}
+[0m23:02:12.658668 [debug] [MainThread]: Flushing usage events
+[0m23:02:14.004595 [debug] [MainThread]: An error was encountered while trying to flush usage events

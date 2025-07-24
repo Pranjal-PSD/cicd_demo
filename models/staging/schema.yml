@@ -1,0 +1,19 @@
+version: 2
+
+sources:
+  - name: raw
+    database: PRANJAL   # e.g., PRANJAL
+    schema: PUBLIC
+    tables:
+      - name: sales_data
+
+models:
+  - name: stage_sales_data
+    description: "Staged sales data"
+    columns:
+      - name: id
+        tests:
+          - not_null
+      - name: sale_date
+        tests:
+          - not_null
