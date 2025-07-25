@@ -1,30 +1,115 @@
-name: dbt Deploy to Dev
+name: dbt CI/CD for Snowflake
 
 on:
   push:
-    branches:
-      - dev  # Only runs when you push to the 'dev' branch
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
 
 jobs:
-  dbt-deploy-dev:
+  run-dbt-dev:
+    name: Run dbt in Dev
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.11'
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
 
-    - name: Install dbt
-      run: |
-        pip install dbt-core dbt-snowflake
+      - name: Install dbt
+        run: pip install dbt-snowflake
 
-    - name: Run dbt deploy script
-      env:
-        DBT_PROFILES_DIR: ./.dbt
-        SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
-      run: |
-        bash cicd/deploy.sh
+      - name: Create dbt profile
+        run: |
+          mkdir -p ~/.dbt
+          cat > ~/.dbt/profiles.yml <<EOF
+          cicd_demo:
+            target: dev
+            outputs:
+              dev:
+                type: snowflake
+                account: ${{ secrets.SNOWFLAKE_ACCOUNT }}
+                user: ${{ secrets.SNOWFLAKE_USER }}
+                password: ${{ secrets.SNOWFLAKE_PASSWORD }}
+                role: ACCOUNTADMIN
+                database: PRANJAL
+                warehouse: COMPUTE
+                schema: PUBLIC
+                threads: 1
+                client_session_keep_alive: false
+              prod:
+                type: snowflake
+                account: ${{ secrets.SNOWFLAKE_ACCOUNT }}
+                user: ${{ secrets.SNOWFLAKE_USER }}
+                password: ${{ secrets.SNOWFLAKE_PASSWORD }}
+                role: ACCOUNTADMIN
+                database: PRANJAL
+                warehouse: COMPUTE
+                schema: PROD
+                threads: 1
+                client_session_keep_alive: false
+          EOF
+
+      - name: Run dbt models in DEV
+        run: |
+          dbt deps
+          dbt run --target dev
+
+  deploy-to-prod:
+    name: Deploy to Prod
+    needs: run-dbt-dev
+    if: github.event_name == 'workflow_dispatch' || github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dbt
+        run: pip install dbt-snowflake
+
+      - name: Create dbt profile
+        run: |
+          mkdir -p ~/.dbt
+          cat > ~/.dbt/profiles.yml <<EOF
+          cicd_demo:
+            target: prod
+            outputs:
+              dev:
+                type: snowflake
+                account: ${{ secrets.SNOWFLAKE_ACCOUNT }}
+                user: ${{ secrets.SNOWFLAKE_USER }}
+                password: ${{ secrets.SNOWFLAKE_PASSWORD }}
+                role: ACCOUNTADMIN
+                database: PRANJAL
+                warehouse: COMPUTE
+                schema: PUBLIC
+                threads: 1
+                client_session_keep_alive: false
+              prod:
+                type: snowflake
+                account: ${{ secrets.SNOWFLAKE_ACCOUNT }}
+                user: ${{ secrets.SNOWFLAKE_USER }}
+                password: ${{ secrets.SNOWFLAKE_PASSWORD }}
+                role: ACCOUNTADMIN
+                database: PRANJAL
+                warehouse: COMPUTE
+                schema: PROD
+                threads: 1
+                client_session_keep_alive: false
+          EOF
+
+      - name: Run dbt models in PROD
+        run: |
+          dbt deps
+          dbt run --target prod
